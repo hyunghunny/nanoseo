@@ -44,5 +44,72 @@ $(function () {
     var thisMonth_prediction = (thisMonth_total.reduce(add, 0) * 0.25) + (leftDay * dayAvg * 0.25);
     console.log(thisMonth_prediction);
 
+    var chart_month = $('#marg_month').highcharts({
+      legend: {
+        enabled: false
+      },
+      chart: {
+          type: 'column'
+          // type: 'bar'
+      },
+      title: {
+         useHTML: true,
+         text: '[ 지난달과 이번달 ]',
+         style: {
+           color: '#FFFFFF',
+           fontWeight: 'bold',
+           'background-color': '#8E8989',
+           'border-radius': '6px',
+           border: '4px solid #8E8989'
+         }
+     },
+      credits: {
+          enabled: false
+      },
+      exporting: {
+          enabled: false
+      },
+      xAxis: {
+          //categories: xAxis_categories
+      },
+      yAxis: {
+          type: 'bar',
+          opposite: true,
+          title: {
+              text: '사용량 (kW/h)'
+          },
+          stackLabels: {
+              enabled: true,
+              style: {
+                  fontWeight: 'bold',
+                  color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+              }
+          }
+      },
+      tooltip: {
+          headerFormat: '<b>{point.x}</b><br/>',
+          pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+      },
+      plotOptions: {
+          column: {
+              stacking: 'normal',
+              dataLabels: {
+                  enabled: false,
+                  color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                  style: {
+                      textShadow: '0 0 3px black'
+                  }
+              },
+          },
+          series: {
+            colorByPoint: true,
+            colors: ['#bed1d4','#9ab0b4']
+          }
+      },
+      series: [{
+          data: [thisMonth_total.reduce(add, 0) * 0.25, thisMonth_prediction],
+          pointWidth: 120
+      }]
+    });
   }
 });
