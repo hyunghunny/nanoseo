@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
   <script src="javascripts/lib/jquery.min.js"></script>
@@ -12,28 +13,25 @@
   <script type="text/javascript" src="javascripts/lib/bootstrap-slider.js"></script>
   <script type="text/javascript" src="javascripts/lib/bootstrap.min.js"></script>
   <script src="javascripts/realtime.js"></script>
+
   <title>MARG BUY</title>
 
 </head>
 <body>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>에너지마켓</h1>
-    </div>
-  </div>
-  <div class="container">
+  <h1 align="center" class="energymarket">에너지마켓</h1>
 
-    <div class="col-lg-4">
-      <h2>30kW 이상 구매 필요</h2>
-    </div>
-    <div class="col-lg-4">
-      <p>판매자 </p>
+      <br><br>
+      <h2 class="buy_title1"><font color="red">30kW</font> 이상 구매 필요</h2><br><br>
+
+    <div class="buy_container">
+      <p class= "buyer_title">판매자 </p>
       <ul class="list-group">
-        <li class="list-group-item" ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">202호 30kW 6000원</button>
+        <!--<li class="list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal">202호<br> 30kW 6000원</button>-->
+        <li class="buyer_list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal"><img class="btn-img" src="./images/buyer1.png" style="max-width: 100%; height: auto;"></button>
         </li>
-        <li class="list-group-item" ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">401호 40kW 9000원</button>
+        <li class="buyer_list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal"><img class="btn-img" src="./images/buyer2.png" style="max-width: 100%; height: auto;"></button>
         </li>
-        <li class="list-group-item" ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">302호 20kW 5500원</button>
+        <li class="buyer_list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal"><img class="btn-img" src="./images/buyer3.png" style="max-width: 100%; height: auto;"></button>
         </li>
       </ul>
     </div>
@@ -41,25 +39,23 @@
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
-          <div class="modal-header">
+          <div>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Modal Header</h4>
+            <!-- <h4 class="modal-title">Modal Header</h4> -->
           </div>
-          <div class="modal-body">
-            <p>30kW 6000원 구매.</p>
+          <div class="modal_body">
+            <p align="center">30kW 6000원 구매</p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" onclick="location.href='buy_result.html';" data-dismiss="modal">구매</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+          <div class="modal_footer">
+            <button type="button" class="modal_button" onclick="location.href='buy_result.html';" data-dismiss="modal">구매</button>
+            <button type="button" class="modal_button" data-dismiss="modal">취소</button>
           </div>
         </div>
 
       </div>
     </div>
-  </div>
 
 </body>
 </html>

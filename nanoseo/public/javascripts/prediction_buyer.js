@@ -81,13 +81,14 @@ $(function () {
       },
       xAxis: {
           categories: xAxis_categories,
-          //lineColor: '#FFFFFF'
+          tickColor: 'rgba(0, 0, 0, 0)'
       },
       yAxis: {
           type: 'bar',
+          gridLineWidth: 0,
           //opposite: true,
           title: {
-              text: '사용량 (kW/h)'
+              text: 'kW/h'
           },
           stackLabels: {
               enabled: true,

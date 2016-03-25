@@ -1,7 +1,65 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
   color: #00b7ff;
+}
+.energymarket {
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+  margin: 7px 0px 5px 0px;
+  line-height: 32px;
+  border-bottom: 1px solid #CCCCCC;
+}
+.buy_button {
+  background-color: #F7F7F7;
+  border: none;
+  color: black;
+  padding: 0px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /*width: 300px;*/
+}
+.buyer_title {
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #9B9B9B;
+}
+.buy_title1 {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+}
+.buy_container {
+  background-color: #F7F7F7;
+  height: 100vh;
+}
+.buyer_list-group-item {
+  padding-left: 0px;
+  padding-bottom: 15px;
+}
+.container {
+  padding-left: 0px;
+}
+.modal_body {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+.modal_button {
+  border: none;
+  background-color: #ffffff;
+  font-size: 16px;
+  color: #757575;
+  padding-right: 50px;
+}
+.modal_footer {
+  padding-left: 90px;
+  padding-bottom: 15px;
+  /*align-content: center;*/
 }
