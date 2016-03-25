@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
   <script src="javascripts/lib/jquery.min.js"></script>
@@ -16,29 +17,22 @@
 
 </head>
 <body>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>에너지마켓</h1>
-    </div>
-  </div>
-  <div class="container">
-      <div class="row" align="center">
-          <div class="col-lg-4">
+  <h1 align="center" class="energymarket">에너지마켓</h1>
+  <br><br>
+  <div class="result_container">
+      <div class="result_title1" align="center">
               <h4 id="sellWatts"></h4>
               <h4 id="sellMessage"></h4>
               <h1 id="profitMessage"></h1>
-          </div>
       </div>
   </div>
       <hr />
-    <div class="container">
-        <div class="row" align="center">
-            <div class="col-lg-4">
+    <div class="result_calculation" align="center">
+        <div class="result_calculation_text1" align="center">
               <h4 id="sellValue"></h4>
               <h4 id="sellPaidValue"></h4>
-              <h1 id="sellProfit"></h1>
-          </div>
         </div>
+        <h1 id="sellProfit"></h1>
     </div>
     <script type="text/javascript">
         var urlParams;
@@ -55,12 +49,12 @@
         }
         var cost = getParameterByName('cost');
         var profits = cost * (1/6);
-        $('#sellWatts').text(getParameterByName('quantity') + 'kW');
-        $('#sellMessage').text(cost + '원 판매');
-        $('#profitMessage').text(profits + '원 이득');
-        $('#sellValue').text('판매액' + cost + '원');
-        $('#sellPaidValue').text('-      실부담금액' + cost * (5/6) + '원' );
-        $('#sellProfit').text('+'+profits+'원');
+        $('#sellWatts').css("color","#CCCCCC").text(getParameterByName('quantity') + 'kW');
+        $('#sellMessage').css("color","#CCCCCC").text(cost + '원 판매');
+        $('#profitMessage').css({"color":"#000","font-size":"30px","padding-bottom":"30px"}).text(profits + '원 ').append('<font color="green">이득</font>');
+        $('#sellValue').css("color","#CCCCCC").text('판매액 ').append('<font color="CCCCCC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+cost+'원</font>');
+        $('#sellPaidValue').css("color","#CCCCCC").text('실부담금액 ').append('<font color="CCCCCC">&nbsp;-'+cost*(5/6)+'원</font>');
+        $('#sellProfit').css({"color":"#000","font-size":"50px"}).text('+'+profits+'원');
 
     </script>
 </body>

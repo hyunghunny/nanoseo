@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
   <script src="javascripts/lib/jquery.min.js"></script>
@@ -15,46 +16,44 @@
   <title>SELL</title>
 </head>
 <body>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>에너지마켓</h1>
-    </div>
-  </div>
+  <h1 align="center" class="energymarket">에너지마켓</h1>
+  <br><br>
+  <h2 id="sellable" class="sell_title1"></h2><br><br>
+
   <div class="container">
 
-    <div class="col-lg-4">
-      <h2 id="sellable"></h2>
-    </div>
 
-    <div class="col-lg-4">
-      <p>판매량 설정</p>
+    <div align="center">
+      <p><font size="5px" color="#757575">판매량 설정</font></p>
+      <br><br>
       <input id="ex1" data-slider-id='ex1Slider' type="range"
       data-slider-min="0" data-slider-max="40" data-slider-step="1" data-slider-value="20" />
       <p id="sliderValue"></p>
-    </div>
 
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="clickSell();">판매</button>
+      <br><br><br>
+    <button type="button" class="sell_button" data-toggle="modal" data-target="#myModal" onclick="clickSell();">판매</button>
+    </div>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
-          <div class="modal-header">
+          <!-- <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">확인</h4>
-          </div>
-          <div class="modal-body">
+
+          </div> -->
+          <div class="modal_body">
             <p id="sellMessage"></p>
           </div>
-          <div class="modal-footer">
+          <div class="modal_footer">
               <!--
               <a id="confirmBtn" class="btn btn-default" data-dismiss="modal" href="sell_result.html">등록</a>
                 -->
-
-            <button id="confirmBtn" type="button" class="btn btn-default" data-dismiss="modal">등록</button>
-
-                  <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <!-- <button type="button" class="modal_button" onclick="location.href='buy_result.html';" data-dismiss="modal" id = "confirmation">구매</button>
+                <button type="button" class="modal_button" data-dismiss="modal">취소</button> -->
+            <button id="confirmBtn" type="button" class="modal_button" data-dismiss="modal">등록</button>
+            <button type="button" class="modal_button" data-dismiss="modal">취소</button>
           </div>
         </div>
 
@@ -72,10 +71,11 @@
       window.unitPrice = 200; // TODO: it SHOULD be removed
   var slider = new Slider('#ex1', {
     formatter: function (value) {
-        $('#sliderValue').text(value + 'kW 판매');
+        $('#sliderValue').text(value + 'kW');
+        document.getElementById("sliderValue").style.fontSize = "xx-large";
         window.quantity = value;
         window.cost = value * window.unitPrice * 1.2;
-        $('#sellMessage').text(window.quantity + 'kW == ' + window.cost + '원 판매');
+        $('#sellMessage').text(window.quantity + 'kW = ' + window.cost + '원 판매');
       return 'Current value: ' + value;
     }
   });
