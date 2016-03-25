@@ -1,37 +1,50 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/highslide.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
-    <script src="javascripts/lib/jquery.min.js"></script>
-    <script src="javascripts/util.js"></script>
-    <script type="text/javascript" src="javascripts/lib/highcharts.js"></script>
-    <script src="javascripts/realtime.js"></script>
-    <script type="text/javascript">
-        // set realtime plot type
-        window.homeType = 'marg';
-    </script>
-    <title>MARG HOME</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
+  <script src="javascripts/lib/jquery.min.js"></script>
+  <script src="javascripts/util.js"></script>
+  <script type="text/javascript" src="javascripts/lib/highcharts.js"></script>
+  <script type="text/javascript" src="javascripts/lib/bootstrap-slider.js"></script>
+  <script src="javascripts/realtime.js"></script>
+  <script type="text/javascript">
+  // set realtime plot type
+  window.homeType = 'marg';
+  function listClick() {
+    alert('list selected');
+  }
+  </script>
+  <title>MARG HOME</title>
 
 </head>
 <body>
+  <div class="jumbotron">
     <div class="container">
-        <h1>MARG HOME PAGE</h1>
-        <div class="row"></div>
-        <div class="col-lg-4">
-            <p>TODO:show ME the money</p>
-        </div>
-        <div class="col-lg-4">
-            <div id="date"></div>
-            <div id="realtime"></div>
-        </div>
-        <div class="col-lg-4">
-            <div id="month"></div>
-            <div id="marg_month"></div>
-        </div>
+      <h1>에너지마켓</h1>
     </div>
+  </div>
+  <div class="container">
+<div class="col-lg-4">
+  <div id="date"></div>
+  <div id="realtime"></div>
+</div>
+
+
+<div class="col-lg-4">
+  <h2>누진 3단계를 넘어갈 것으로 예상</h2>
+</div>
+<div class="col-lg-4">
+  <h2>30kWh 초과(???)</h2>
+</div>
+
+<div class="col-lg-4">
+  <a class="btn btn-default" href="/buy.html">전력 구매</a>
+</div>
+</div>
+
 </body>
 </html>

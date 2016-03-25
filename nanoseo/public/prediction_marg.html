@@ -9,7 +9,12 @@
     <script src="javascripts/lib/jquery.min.js"></script>
     <script src="javascripts/util.js"></script>
     <script type="text/javascript" src="javascripts/lib/highcharts.js"></script>
+<<<<<<< HEAD
     <script src="javascripts/prediction_buyer.js"></script>
+=======
+    <script type="text/javascript" src="javascripts/lib/bootstrap.min.js"></script>
+    <script src="javascripts/prediction_marg.js"></script>
+>>>>>>> origin/master
     <script type="text/javascript">
         // set realtime plot type
         window.homeType = 'marg';
@@ -20,10 +25,46 @@
 <body>
     <div class="container">
         <h1>MARG HOME PAGE</h1>
+<<<<<<< HEAD
         <div class="row"></div>
         <div class="col-lg-4">
             <div id="month"></div>
             <div id="prediction_hcc"></div>
+=======
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="month"></div>
+                <div id="prediction_marg"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <p>modal dialog sample</p>
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+            </div>
+        </div>
+        <div id="marg_month">
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+>>>>>>> origin/master
         </div>
     </div>
 </body>
