@@ -62,7 +62,6 @@
     <Content Include="public\stylesheets\bootstrap-slider.css" />
     <Content Include="public\stylesheets\bootstrap.min.css" />
     <Content Include="public\stylesheets\highslide.css" />
-    <Content Include="public\stylesheets\style.styl" />
     <Content Include="public\test.html" />
     <Content Include="public\ux.html" />
     <Content Include="README.md" />
