@@ -17,7 +17,7 @@ a {
   background-color: #F7F7F7;
   border: none;
   color: black;
-  padding: 0px 32px;
+  padding: 0px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -64,7 +64,7 @@ a {
   border: none;
   background-color: #ffffff;
   font-size: 16px;
-  color: #757575;
+  color: #D3D3D3;
   padding-right: 50px;
 }
 .modal_footer {
