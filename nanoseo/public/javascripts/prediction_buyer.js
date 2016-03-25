@@ -1,4 +1,7 @@
 
+  var thisMonth_prediction = 0;
+  var state = 0;
+
 $(function () {
 
   var firstDayOfThisMonth = new Date(baseDay).setDate(1);
@@ -42,8 +45,8 @@ $(function () {
         return a + b;
     }
 
-    var thisMonth_prediction = (thisMonth_total.reduce(add, 0) * 0.3) + (leftDay * dayAvg * 0.3);
-    console.log(thisMonth_prediction);
+    thisMonth_prediction = (thisMonth_total.reduce(add, 0) * 0.3) + (leftDay * dayAvg * 0.3);
+    // console.log(thisMonth_prediction);
 
     xAxis_categories = ['03.01~03.25','이번 달 예상']
 
@@ -56,8 +59,12 @@ $(function () {
       line_y = floor_value
     }
 
-    var stage = Math.ceil(ceil_value/100);
+    stage = Math.ceil(ceil_value/100);
+
     console.log(stage);
+
+    window.updateComplete(stage, thisMonth_prediction, thisMonth_total);
+
 
 //    console.log(calcPrice(stage, 20))
 

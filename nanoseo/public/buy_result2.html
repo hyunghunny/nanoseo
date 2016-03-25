@@ -43,7 +43,6 @@
     </div>
     <script type="text/javascript">
 
-
         var urlParams;
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -59,16 +58,21 @@
 
         // console.log(stage);
         // console.log(thisMonth_prediction);
+        window.updateComplete = function(stage, thisMonth_prediction, thisMonth_total){
+          var cost = getParameterByName('cost');
+          var originalCost = calcPrice(stage, thisMonth_prediction - (thisMonth_total.reduce(add, 0) * 0.3));
+          function add(a, b) {
+              return a + b;
+          }
+          var profits = originalCost - cost;
 
-        var cost = getParameterByName('cost');
-        var originalCost = calcPrice(stage, thisMonth_prediction - (thisMonth_total.reduce(add, 0) * 0.3));
-        var profits = originalCost - cost;
-        $('#buyWatts').text(getParameterByName('quantity') + 'kW');
-        $('#buyMessage').text(cost + '원 구매');
-        $('#profitMessage').text(profits + '원 이득');
-        $('#predictionValue').text('예상부담금액' + originalCost + '원');
-        $('#paidValue').text('-      실부담금액' + '원' );
-        $('#buyProfit').text('+'+profits+'원');
+          $('#buyWatts').text(getParameterByName('quantity') + 'kW');
+          $('#buyMessage').text(cost + '원 구매');
+          $('#profitMessage').text(Math.round(profits) + '원 이득');
+          $('#predictionValue').text('예상부담금액' + Math.round(originalCost) + '원');
+          $('#paidValue').text('-      실부담금액' + cost + '원' );
+          $('#buyProfit').text('+'+Math.round(profits)+'원');
+        }
     </script>
 </body>
 </html>
