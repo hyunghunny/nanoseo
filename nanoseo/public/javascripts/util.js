@@ -148,3 +148,10 @@ function invokeOpenAPI(url, scb) {
         }
     });
 }
+
+function calcPrice(stage, kw){
+  usage_price = [60.70, 125.90, 187.90, 280.60, 417.70, 709.50];
+  price = kw * usage_price[stage-1];
+
+  return(price);
+}
