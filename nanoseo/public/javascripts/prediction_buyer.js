@@ -55,8 +55,6 @@ $(function () {
       line_y = floor_value
     }
 
-    // console.log(line_y)
-
     stage = Math.ceil(ceil_value/100);
 
     console.log(stage);
