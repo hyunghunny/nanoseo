@@ -34,20 +34,17 @@ $(function () {
     var dayAvg = arrayMean(thisMonth_total);
     var leftDay = 31 - baseDay.getDate();
 
-    // console.log(thisMonth_total);
-    // console.log(thisMonth_total.reduce(add, 0) * 0.25);
+    console.log(thisMonth_total);
+    console.log(thisMonth_total.reduce(add, 0) * 0.3);
 
     function add(a, b) {
         return a + b;
     }
 
     var thisMonth_prediction = (thisMonth_total.reduce(add, 0) * 0.3) + (leftDay * dayAvg * 0.3);
-    // console.log((thisMonth_prediction));
-    // console.log(Math.ceil(thisMonth_prediction/100)*100);
-    // console.log(Math.floor(thisMonth_prediction/100)*100);
+    console.log(thisMonth_prediction);
 
-    ceil_value  = Math.ceil(thisMonth_prediction/100)*100;
-    floor_value = Math.floor(thisMonth_prediction/100)*100;
+    xAxis_categories = ['03.01~03.25','이번 달 예상']
 
     if(ceil_value - thisMonth_prediction < 50){
       line_y = ceil_value
@@ -61,24 +58,17 @@ $(function () {
 
     console.log(calcPrice(stage, 20))
 
-    var chart_month = $('#marg_month').highcharts({
+    var chart_month = $('#hcc_month').highcharts({
       legend: {
         enabled: false
       },
       chart: {
-          type: 'column'
+          type: 'column',
           // type: 'bar'
+          height: 250
       },
       title: {
-         useHTML: true,
-         text: '[ 지난달과 이번달 ]',
-         style: {
-           color: '#FFFFFF',
-           fontWeight: 'bold',
-           'background-color': '#8E8989',
-           'border-radius': '6px',
-           border: '4px solid #8E8989'
-         }
+         text: ''
      },
       credits: {
           enabled: false
@@ -87,11 +77,12 @@ $(function () {
           enabled: false
       },
       xAxis: {
-          //categories: xAxis_categories
+          categories: xAxis_categories,
+          //lineColor: '#FFFFFF'
       },
       yAxis: {
           type: 'bar',
-          opposite: true,
+          //opposite: true,
           title: {
               text: '사용량 (kW/h)'
           },
@@ -101,7 +92,16 @@ $(function () {
                   fontWeight: 'bold',
                   color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
               }
-          }
+          },
+          plotLines: [{
+                    value: 320,
+                    color: 'red',
+                    dashStyle: 'solid',
+                    width: 2,
+                    label: {
+                        //text: 'Last quarter maximum'
+                    }
+                }]
       },
       tooltip: {
           headerFormat: '<b>{point.x}</b><br/>',
@@ -119,12 +119,13 @@ $(function () {
               },
           },
           series: {
+            maxPointWidth: 50,
             colorByPoint: true,
-            colors: ['#bed1d4','#9ab0b4']
+            colors: ['#BDD7EE','#5B9BD5']
           }
       },
       series: [{
-          data: [thisMonth_total.reduce(add, 0) * 0.25, thisMonth_prediction],
+          data: [Math.round(thisMonth_total.reduce(add, 0) * 0.3), Math.round(thisMonth_prediction)],
           pointWidth: 120
       }]
     });
