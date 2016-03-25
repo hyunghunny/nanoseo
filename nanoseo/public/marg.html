@@ -4,31 +4,65 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/highslide.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
     <script src="javascripts/lib/jquery.min.js"></script>
     <script src="javascripts/util.js"></script>
     <script type="text/javascript" src="javascripts/lib/highcharts.js"></script>
+    <script type="text/javascript" src="javascripts/lib/bootstrap-slider.js"></script>
     <script src="javascripts/realtime.js"></script>
     <script type="text/javascript">
         // set realtime plot type
-        window.homeType = 'marg';       
+        window.homeType = 'marg';
+        function listClick() {
+            alert('list selected');
+        }
     </script>
     <title>MARG HOME</title>
 
 </head>
 <body>
-    <div class="container">
-        <h1>MARG HOME PAGE</h1>
-        <div class="row"></div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>MARG HOME PAGE</h1>
+        </div>
+    </div>
+    <div class="container">        
+        <div class="row">
+            <div class="col-md-11 col-sm-12 col-xs-12 col-md-offset-1">
+                <p><img src="https://pbs.twimg.com/media/BA4ibWECAAAKs4O.jpg" class="col-md-3 img-responsive pull-left" alt="" />Bacon ipsum dolor sit amet short loin jerky salami sausage, hamburger t-bone doner filet mignon sirloin beef. Tail short ribs jerky leberkas prosciutto pastrami fatback jowl turkey t-bone bacon. Hamburger tail tri-tip, ribeye ham hock leberkas meatball pig short ribs jerky meatloaf. Flank shank bacon, fatback boudin ham tongue beef ribs pig brisket pancetta frankfurter. Jerky pig biltong, chicken hamburger swine corned beef beef ribs beef jowl. Kevin cow turducken, pancetta fatback swine pig boudin ball tip kielbasa venison. Pig salami capicola chuck pancetta pork.</p>
+
+            </div>
         <div class="col-lg-4">
-            <p>TODO:show ME the money</p>
+            <h2>TODO:show ME the money</h2>
         </div>
         <div class="col-lg-4">
             <div id="date"></div>
             <div id="realtime"></div>
         </div>
-
+        <div class="col-lg-4">
+            <p>Select neighbor to buy electrocity: </p>
+            <ul class="list-group">
+                <li class="list-group-item" onclick="listClick();">UX</li>
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <p>Slidebar sample</p>
+            <input id="ex1" data-slider-id='ex1Slider' type="range" 
+                   data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+            <p id="sliderValue"></p>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn btn-default" href="/ux.html">Go the UX</a>
+        </div>
     </div>
+    <script type="text/javascript">
+        var slider = new Slider('#ex1', {
+            formatter: function (value) {
+                $('#sliderValue').text(value);
+                return 'Current value: ' + value;
+            }
+        });
+    </script>
 </body>
 </html>

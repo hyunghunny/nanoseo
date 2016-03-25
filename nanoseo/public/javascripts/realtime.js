@@ -20,7 +20,7 @@
                         //var x = (new Date()).getTime(); // current time
                         var x = ((new Date()).getTime() - (new Date()).getTimezoneOffset() * 60000); // current local time
                         // console.log(x);
-                        console.log(window.homeType);
+                        //console.log(window.homeType);
                         invokeOpenAPI('/api/labs/'+ window.homeType + '/energy/latest.json', function (data) {
                             //console.log(data);
                             total = data.sum / 1000000;
