@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\javascripts\lib\bootstrap-slider.js" />
     <Compile Include="public\javascripts\lib\bootstrap.min.js" />
     <Compile Include="public\javascripts\lib\easeljs-0.6.1.min.js" />
     <Compile Include="public\javascripts\lib\exporting.js" />
@@ -58,6 +59,7 @@
     <Content Include="public\lib\proxy\asp\WeatherProxy.aspx.designer.cs" />
     <Content Include="public\lib\proxy\php\proxy.php" />
     <Content Include="public\marg.html" />
+    <Content Include="public\stylesheets\bootstrap-slider.css" />
     <Content Include="public\stylesheets\bootstrap.min.css" />
     <Content Include="public\stylesheets\highslide.css" />
     <Content Include="public\stylesheets\style.styl" />

@@ -8,6 +8,7 @@
     "email": "webofthink@snu.ac.kr"
   },
   "dependencies": {
+    "bootstrap-slider": "^6.1.5",
     "express": "3.4.4",
     "jade": "*",
     "stylus": "*"
