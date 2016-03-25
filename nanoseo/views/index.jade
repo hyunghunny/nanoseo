@@ -1,0 +1,23 @@
+﻿extends layout
+
+block content
+    div.navbar.navbar-inverse.navbar-fixed-top
+        div.container
+            div.navbar-header
+                button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand #{title}
+            div.navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li: a(href='/') Home
+                    li: a(href='/marg.html') MARG Dashboard
+                    li: a(href='/ux.html') UX Dashboard
+ 
+    div.jumbotron
+        div.container  
+            h1 #{title}
+            p
+    div.container
+        p TODO: update me

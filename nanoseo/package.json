@@ -1,0 +1,15 @@
+{
+  "name": "nanoseo",
+  "version": "0.1.0",
+  "description": "Enegy Sharing Platform Prototype",
+  "main": "app.js",
+  "author": {
+    "name": "webofthink",
+    "email": "webofthink@snu.ac.kr"
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
