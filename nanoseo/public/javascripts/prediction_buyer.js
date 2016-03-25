@@ -46,6 +46,9 @@ $(function () {
 
     xAxis_categories = ['03.01~03.25','이번 달 예상']
 
+    ceil_value  = Math.ceil(thisMonth_prediction/100)*100;
+    floor_value = Math.floor(thisMonth_prediction/100)*100;
+
     if(ceil_value - thisMonth_prediction < 50){
       line_y = ceil_value
     } else {
@@ -94,7 +97,7 @@ $(function () {
               }
           },
           plotLines: [{
-                    value: 320,
+                    value: line_y,
                     color: 'red',
                     dashStyle: 'solid',
                     width: 2,
