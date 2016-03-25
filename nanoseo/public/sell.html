@@ -48,12 +48,12 @@
             <p id="sellMessage"></p>
           </div>
           <div class="modal-footer">
-              <!--     
+              <!--
               <a id="confirmBtn" class="btn btn-default" data-dismiss="modal" href="sell_result.html">등록</a>
                 -->
-         
+
             <button id="confirmBtn" type="button" class="btn btn-default" data-dismiss="modal">등록</button>
-            
+
                   <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
           </div>
         </div>
@@ -74,7 +74,7 @@
     formatter: function (value) {
         $('#sliderValue').text(value + 'kW 판매');
         window.quantity = value;
-        window.cost = value * window.unitPrice;
+        window.cost = value * window.unitPrice * 1.2;
         $('#sellMessage').text(window.quantity + 'kW == ' + window.cost + '원 판매');
       return 'Current value: ' + value;
     }
