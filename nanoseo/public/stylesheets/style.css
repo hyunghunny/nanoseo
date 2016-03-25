@@ -42,6 +42,9 @@ a {
   padding-bottom: 60px;
   border-bottom: 1px solid #CCCCCC;
 }
+.result_title1 {
+  padding-top: 20px;
+}
 .buyResult {
   font-size: 30px;
   color: black;
@@ -59,7 +62,7 @@ a {
   padding-left: 0px;
   padding-bottom: 20px;
   text-align: center;
-  border-bottom: 1px solid #D2E3E8;
+  /*border-bottom: 1px solid #D2E3E8;*/
 }
 .modal_body {
   text-align: center;
@@ -87,7 +90,7 @@ a {
   /*align-content: center;*/
 }
 .result_calculation {
-  padding-top: 80px;
+  padding-top: 50px;
   align-items: center;
 }
 .result_calculation_text1 {
