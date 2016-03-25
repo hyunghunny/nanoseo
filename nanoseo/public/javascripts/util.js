@@ -136,7 +136,7 @@ function dateToString(date) {
 
 function invokeOpenAPI(url, scb) {
     $.ajax({
-        url : 'http://adsl.snu.ac.kr' + url,
+        url : 'http://adsl.snu.ac.kr/' + url,
         type : "get",
         dataType : "json",
         success : function (data) {
