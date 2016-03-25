@@ -1,3 +1,4 @@
+
 $(function () {
 
   var firstDayOfThisMonth = new Date(baseDay).setDate(1);
@@ -55,11 +56,10 @@ $(function () {
       line_y = floor_value
     }
 
-    stage = Math.ceil(ceil_value/100);
-
+    var stage = Math.ceil(ceil_value/100);
     console.log(stage);
 
-    console.log(calcPrice(stage, 20))
+//    console.log(calcPrice(stage, 20))
 
     var chart_month = $('#hcc_month').highcharts({
       legend: {
