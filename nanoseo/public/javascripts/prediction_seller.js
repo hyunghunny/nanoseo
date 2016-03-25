@@ -34,14 +34,14 @@ $(function () {
     var dayAvg = arrayMean(thisMonth_total);
     var leftDay = 31 - baseDay.getDate();
 
-    console.log(thisMonth_total);
-    console.log(thisMonth_total.reduce(add, 0) * 0.25);
+    // console.log(thisMonth_total);
+    // console.log(thisMonth_total.reduce(add, 0) * 0.45);
 
     function add(a, b) {
         return a + b;
     }
 
-    var thisMonth_prediction = (thisMonth_total.reduce(add, 0) * 0.45) + (leftDay * dayAvg * 0.45);
+    var thisMonth_prediction = (thisMonth_total.reduce(add, 0) * 0.32) + (leftDay * dayAvg * 0.32);
     console.log(thisMonth_prediction);
 
   }
