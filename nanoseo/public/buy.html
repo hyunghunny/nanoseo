@@ -28,9 +28,12 @@
       <ul class="list-group">
         <!--<li class="list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal">202호<br> 30kW 6000원</button>-->
         <li class="buyer_list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal"><img class="btn-img" src="./images/buyer1.png" style="max-width: 100%; height: auto;"></button>
+        <li class="list-group-item" ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id = "addr202Info" onclick="clickBuy(addr202)"></button>
         </li>
+        <li class="list-group-item" ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"  id = "addr401Info" onclick="clickBuy(addr401)"></button>
         <li class="buyer_list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal"><img class="btn-img" src="./images/buyer2.png" style="max-width: 100%; height: auto;"></button>
         </li>
+        <li class="list-group-item" ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id = "addr302Info" onclick="clickBuy(addr302)"></button>
         <li class="buyer_list-group-item" ><button type="button" class="buy_button" data-toggle="modal" data-target="#myModal"><img class="btn-img" src="./images/buyer3.png" style="max-width: 100%; height: auto;"></button>
         </li>
       </ul>
@@ -43,19 +46,47 @@
         <div class="modal-content">
           <div>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <!-- <h4 class="modal-title">Modal Header</h4> -->
+            <h4 class="modal-title">구매 확인</h4>
           </div>
-          <div class="modal_body">
-            <p align="center">30kW 6000원 구매</p>
+          <div class="modal-body">
+            <p id = "buyMessage"></p>
           </div>
-          <div class="modal_footer">
-            <button type="button" class="modal_button" onclick="location.href='buy_result.html';" data-dismiss="modal">구매</button>
-            <button type="button" class="modal_button" data-dismiss="modal">취소</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" onclick="location.href='buy_result.html';" data-dismiss="modal" id = "confirmation">구매</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
           </div>
         </div>
 
       </div>
     </div>
+  </div>
+  <script>
+  var addr202 = createSellerInfo(202, 30, 6000)
+  var addr401 = createSellerInfo(401, 40, 9000)
+  var addr302 = createSellerInfo(302, 20, 5500)
 
+  $('#addr202Info').text(createSellerMessage(addr202));
+  $('#addr401Info').text(createSellerMessage(addr401));
+  $('#addr302Info').text(createSellerMessage(addr302));
+
+  function clickBuy(obj) {
+    window.link = "location.href='buy_result.html?quantity=" + obj.watt + "&cost=" + obj.cost+"'";
+    console.log(window.link);
+    $('#confirmation').attr('onClick', window.link);
+      $('#buyMessage').text(obj.watt + 'kW ' + obj.cost + '원 구매');
+  }
+
+  function createSellerInfo(address, watt, cost){
+    return {
+      'address' : address,
+      'watt' : watt,
+      'cost' : cost
+    };
+  }
+
+  function createSellerMessage (addr){
+    return addr.address + '호 ' + addr.watt + 'kW ' + addr.cost + '원';
+  }
+  </script>
 </body>
 </html>

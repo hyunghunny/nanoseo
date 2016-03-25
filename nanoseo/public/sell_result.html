@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,26 +22,46 @@
     </div>
   </div>
   <div class="container">
-
-    <div class="col-lg-4">
-      <h4>36kW</h4>
-    </div>
-    <div class="col-lg-4">
-      <h4>7000원 판매</h4>
-    </div>
-    <div class="col-lg-4">
-      <h4>1400원 이득</h4>
-    </div>
-
-    <div class="col-lg-4">
-      <h4>판매수익금액 7000원</h4>
-    </div>
-    <div class="col-lg-4">
-      <h4>실부담금액 -5600원</h4>
-    </div>
-    <div class="col-lg-4">
-      <h4>+1400원</h4>
-    </div>
+      <div class="row" align="center">
+          <div class="col-lg-4">
+              <h4 id="sellWatts"></h4>
+              <h4 id="sellMessage"></h4>
+              <h1 id="profitMessage"></h1>
+          </div>
+      </div>
   </div>
+      <hr />
+    <div class="container">
+        <div class="row" align="center">
+            <div class="col-lg-4">
+              <h4 id="sellValue"></h4>
+              <h4 id="sellPaidValue"></h4>
+              <h1 id="sellProfit"></h1>
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var urlParams;
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            console.log(url);
+            url = url.toLowerCase(); // This is just to avoid case sensitiveness
+            name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var cost = getParameterByName('cost');
+        var profits = cost * (1/6);
+        $('#sellWatts').text(getParameterByName('quantity') + 'kW');
+        $('#sellMessage').text(cost + '원 판매');
+        $('#profitMessage').text(profits + '원 이득');
+        $('#sellValue').text('판매액' + cost + '원');
+        $('#sellPaidValue').text('-      실부담금액' + cost * (5/6) + '원' );
+        $('#sellProfit').text('+'+profits+'원');
+
+    </script>
 </body>
 </html>
