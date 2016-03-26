@@ -133,7 +133,7 @@ $(function () {
           pointWidth: 120
       }]
     });
-    $('#seller_text_prediction').prepend('누진 '+'<font color="red">'+stage+'</font>'+'단계를 남을 것으로 예상');
+    $('#seller_text_prediction').prepend('누진 '+'<font color="red">'+stage+'</font>'+'단계를 넘기지 않을 것으로 예상');
     $('#seller_text_predictionValue').prepend(Math.round(thisMonth_prediction)-Math.round(thisMonth_total.reduce(add, 0) * 0.32)+'kWh 여유');
   }
 });

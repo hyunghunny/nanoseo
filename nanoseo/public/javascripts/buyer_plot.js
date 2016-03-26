@@ -133,7 +133,7 @@ $(function () {
           pointWidth: 120
       }]
     });
-    $('#buyer_text_prediction').prepend('누진 '+'<font color="red">'+stage+'</font>'+'단계를 넘어갈 것으로 예상');
+    $('#buyer_text_prediction').prepend('누진 '+'<font color="red">'+stage+'</font>'+'단계 진입 예상');
     $('#buyer_text_predictionValue').prepend(Math.round(thisMonth_prediction)-Math.round(thisMonth_total.reduce(add, 0) * 0.3)+'kWh 초과');
   }
 });
