@@ -59,8 +59,80 @@ $(function () {
 
     console.log(stage);
 
-    window.updateComplete(stage, thisMonth_prediction, thisMonth_total);
+//    console.log(calcPrice(stage, 20))
 
+    var chart_month = $('#hcc_month').highcharts({
+      legend: {
+        enabled: false
+      },
+      chart: {
+          type: 'column',
+          // type: 'bar'
+          height: 250
+      },
+      title: {
+         text: ''
+     },
+      credits: {
+          enabled: false
+      },
+      exporting: {
+          enabled: false
+      },
+      xAxis: {
+          categories: xAxis_categories,
+          tickColor: 'rgba(0, 0, 0, 0)'
+      },
+      yAxis: {
+          type: 'bar',
+          gridLineWidth: 0,
+          //opposite: true,
+          title: {
+              text: 'kW/h'
+          },
+          stackLabels: {
+              enabled: true,
+              style: {
+                  fontWeight: 'bold',
+                  color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+              }
+          },
+          plotLines: [{
+                    value: line_y,
+                    color: 'red',
+                    dashStyle: 'solid',
+                    width: 2,
+                    label: {
+                        //text: 'Last quarter maximum'
+                    }
+                }]
+      },
+      tooltip: {
+          headerFormat: '<b>{point.x}</b><br/>',
+          pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+      },
+      plotOptions: {
+          column: {
+              stacking: 'normal',
+              dataLabels: {
+                  enabled: false,
+                  color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                  style: {
+                      textShadow: '0 0 3px black'
+                  }
+              },
+          },
+          series: {
+            maxPointWidth: 50,
+            colorByPoint: true,
+            colors: ['#BDD7EE','#5B9BD5']
+          }
+      },
+      series: [{
+          data: [Math.round(thisMonth_total.reduce(add, 0) * 0.3), Math.round(thisMonth_prediction)],
+          pointWidth: 120
+      }]
+    });
     $('#buyer_text_prediction').prepend('누진 '+'<font color="red">'+stage+'</font>'+'단계를 넘어갈 것으로 예상');
     $('#buyer_text_predictionValue').prepend(Math.round(thisMonth_prediction)-Math.round(thisMonth_total.reduce(add, 0) * 0.3)+'kWh 초과');
   }

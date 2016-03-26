@@ -70,10 +70,10 @@
   // $('#addr302Info').text(createSellerMessage(addr302));
 
   function clickBuy(obj) {
-    window.link = "location.href='buy_result.html?quantity=" + obj.watt + "&cost=" + obj.cost+"'";
+    window.link = "location.href='buy_result2.html?quantity=" + obj.watt + "&cost=" + obj.cost+"'";
     console.log(window.link);
     $('#confirmation').attr('onClick', window.link);
-      $('#buyMessage').text(obj.watt + 'kW ' + obj.cost + '원 구매');
+      $('#buyMessage').text(obj.watt + 'kW를 ' + obj.cost + '원에 구매');
   }
 
   function createSellerInfo(address, watt, cost){
