@@ -75,7 +75,8 @@ a {
   background-color: #ffffff;
   font-size: 16px;
   color: #D3D3D3;
-  padding-right: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .sell_button {
   border: none;
@@ -85,7 +86,7 @@ a {
   align-content: center;
 }
 .modal_footer {
-  padding-left: 90px;
+  /*padding-left: 30%;*/
   padding-bottom: 15px;
   /*align-content: center;*/
 }
