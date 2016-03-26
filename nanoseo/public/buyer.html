@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
   <script src="javascripts/lib/jquery.min.js"></script>
   <script src="javascripts/util.js"></script>
   <script type="text/javascript" src="javascripts/lib/highcharts.js"></script>
   <script type="text/javascript" src="javascripts/lib/bootstrap-slider.js"></script>
-  <script src="javascripts/realtime.js"></script>
+  <script src="javascripts/prediction_buyer.js"></script>
   <script type="text/javascript">
   // set realtime plot type
   window.homeType = 'marg';
@@ -22,28 +23,18 @@
 
 </head>
 <body>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>에너지마켓</h1>
-    </div>
-  </div>
-  <div class="container">
-<div class="col-lg-4">
-  <div id="date"></div>
-  <div id="realtime"></div>
-</div>
+  <h1 align="center" class="energymarket">에너지마켓</h1>
 
+      <br><br>
+  <div class="container" align="center">
+    <div id="hcc_month"></div>
 
-<div class="col-lg-4">
-  <h2>누진 3단계를 넘어갈 것으로 예상</h2>
-</div>
-<div class="col-lg-4">
-  <h2>30kWh 초과(???)</h2>
-</div>
+    <h2 id="buyer_text_prediction" class="default_Text"></h2>
+    <h2 id="buyer_text_predictionValue" class="default_subText"></h2>
 
-<div class="col-lg-4">
-  <a class="btn btn-default" href="/buy.html">전력 구매</a>
-</div>
+    <br><br>
+    <a class="sell_button" href="/buy.html">전력 구매</a>
+    <div class="icon"><img src="./images/cart.png" ></div>
 </div>
 
 </body>

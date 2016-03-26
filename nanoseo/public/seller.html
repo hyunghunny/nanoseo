@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
   <script src="javascripts/lib/jquery.min.js"></script>
   <script src="javascripts/util.js"></script>
   <script type="text/javascript" src="javascripts/lib/highcharts.js"></script>
   <script type="text/javascript" src="javascripts/lib/bootstrap-slider.js"></script>
-  <script src="javascripts/realtime.js"></script>
+  <script src="javascripts/prediction_seller.js"></script>
   <script type="text/javascript">
   // set realtime plot type
   window.homeType = 'ux';
@@ -22,28 +23,18 @@
 
 </head>
 <body>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>에너지마켓</h1>
-    </div>
-  </div>
-  <div class="container">
+  <h1 align="center" class="energymarket">에너지마켓</h1>
 
-    <div class="col-lg-4">
-      <div id="date"></div>
-      <div id="realtime"></div>
-    </div>
+      <br><br>
+  <div class="container" align="center">
+      <div id="ux_month"></div>
 
-    <div class="col-lg-4">
-      <h2>누진 4단계를 남을 것으로 예상</h2>
-    </div>
-    <div class="col-lg-4">
-      <h2>40kWh 여유</h2>
-    </div>
+      <h2 id="seller_text_prediction" class="default_Text"></h2>
+      <h2 id="seller_text_predictionValue" class="default_subText"></h2>
 
-    <div class="col-lg-4">
-      <a class="btn btn-default" href="/sell.html">전력 판매</a>
-    </div>
+      <br><br>
+      <a id="selling" class="sell_button" href="/sell.html">전력 판매</a>
+      <div class="icon"><img src="./images/coin.png" ></div>
   </div>
 </body>
 </html>
