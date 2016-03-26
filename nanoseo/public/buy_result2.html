@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media='screen' />
   <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-slider.css" />
   <script src="javascripts/lib/jquery.min.js"></script>
@@ -17,29 +18,22 @@
 
 </head>
 <body>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>에너지마켓</h1>
-    </div>
-  </div>
-  <div class="container">
-      <div class="row" align="center">
-          <div class="col-lg-4">
+  <h1 align="center" class="energymarket">에너지마켓</h1>
+  <br><br>
+  <div class="result_container">
+      <div class="result_title1" align="center">
               <h4 id="buyWatts"></h4>
               <h4 id="buyMessage"></h4>
               <h1 id="profitMessage"></h1>
-          </div>
       </div>
   </div>
       <hr />
-    <div class="container">
-        <div class="row" align="center">
-            <div class="col-lg-4">
+    <div class="result_calculation" align="center">
+        <div class="result_calculation_text1" align="center">
               <h4 id="predictionValue"></h4>
               <h4 id="paidValue"></h4>
-              <h1 id="buyProfit"></h1>
-          </div>
         </div>
+        <h1 id="buyProfit"></h1>
     </div>
     <script type="text/javascript">
 
@@ -66,12 +60,12 @@
           }
           var profits = originalCost - cost;
 
-          $('#buyWatts').text(getParameterByName('quantity') + 'kW');
-          $('#buyMessage').text(cost + '원 구매');
-          $('#profitMessage').text(Math.round(profits) + '원 이득');
-          $('#predictionValue').text('예상부담금액' + Math.round(originalCost) + '원');
-          $('#paidValue').text('-      실부담금액' + cost + '원' );
-          $('#buyProfit').text('+'+Math.round(profits)+'원');
+          $('#buyWatts').css("color","#CCCCCC").text(getParameterByName('quantity') + 'kW');
+          $('#buyMessage').css("color","#CCCCCC").text(cost + '원 구매');
+          $('#profitMessage').css({"color":"#000","font-size":"30px","padding-bottom":"30px"}).text(Math.round(profits) + '원 ').append('<font color="green">이득</font>');
+          $('#predictionValue').css("color","#CCCCCC").text('예상부담금액 ').append('<font color="CCCCCC">&nbsp;&nbsp;&nbsp;&nbsp;'+Math.round(originalCost)+'원</font>');
+          $('#paidValue').css("color","#CCCCCC").text('실부담금액').append('<font color="CCCCCC"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -'+cost+'원</font>');
+          $('#buyProfit').css({"color":"#000","font-size":"50px"}).text('+'+Math.round(profits)+'원');
         }
     </script>
 </body>
